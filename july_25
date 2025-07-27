@@ -1,0 +1,64 @@
+Beginner's Track
+
+1295. Find Numbers with Even Number of Digits
+
+class Solution {
+public:
+    int findNumbers(vector<int>& nums) {
+        int count=0;
+        for(int i=0;i<nums.size();i++){
+            int digitCount=0;
+
+            while(nums[i]>0){
+                nums[i]=nums[i]/10;
+                digitCount++;
+            }
+
+            if(digitCount%2==0){
+                count++;
+            }   
+        }
+        return count;
+    }
+};
+
+
+Advanced Track
+
+1. Two Sum
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(nums[j]==target-nums[i]){
+                    return {i,j};
+                }
+            }
+        }
+        return {};
+    }
+};
+
+203. Remove Linked List Elements
+
+class Solution {
+public:
+    ListNode* removeElements(ListNode* head, int val) {
+        ListNode* tempNode=new ListNode();
+        tempNode->next=head;
+
+        ListNode* curr=tempNode;
+        while(curr->next){
+            if(curr->next->val==val){
+                curr->next=curr->next->next;
+            }
+            else{
+                curr=curr->next;
+            }
+        }
+        return tempNode->next;    
+    }
+};

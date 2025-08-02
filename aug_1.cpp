@@ -26,3 +26,28 @@ return 0;
 
 //Next Round
 
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,k;
+    cin>>n>>k;
+    vector<int>result(n);
+    for(int i=0;i<n;i++){
+        cin>>result[i];
+    }
+    int count=0;
+    int kth_score=result[k-1];
+    for(int i=0;i<n;i++){
+        if(result[i]>=kth_score && result[i]>0){
+            count++;
+        }
+    }
+    cout<<count;
+ 
+return 0;
+}
+
+//Beautiful Matrix
+
+
+

@@ -1,3 +1,29 @@
+//Beginner's Track
+
+//A. String Task 118A
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    cin>>s;
+ 
+    unordered_set<char>vowels={'A','E','I','O','U','Y','a','e','i','o','u','y'};
+    string result;
+ 
+    for(char c:s){
+        if(vowels.count(c)){
+            continue;
+        }
+        else{
+            result+='.';
+            result+=tolower(c);
+        }
+    }
+    cout<<result;
+return 0;
+}
+
 //Advanced Track
 
 //A. George and Accommodation

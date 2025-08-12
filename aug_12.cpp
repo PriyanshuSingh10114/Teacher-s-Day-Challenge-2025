@@ -35,3 +35,31 @@ int main() {
     int ans = min(toast,min(toast_salt,toast_lime))/n;
     cout << ans;
 }
+
+//Night at the museum 731A
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    cin>>s;
+
+    char position='a';
+    int ans=0;
+    for(int i=0;i<s.size();i++){
+        int diff=s[i]-position;
+        if(diff<0){
+            diff=-diff;
+        }
+        int rotate=26-diff;
+        if(diff<rotate){
+            ans=ans+diff;
+        }
+        else{
+            ans+=rotate;
+        }
+        position=s[i];
+    }
+    cout<<ans<<endl;
+return 0;
+}
